@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rapido</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            margin-left: 40%;
+        }
+        .paragrafo{
+            margin-top: 10%;
+            height: 200px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 70px;
+        }
+       
+        .numeros input{
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+        }
+
+        .resultado{
+            display: flex;
+            width: 43%;
+            margin-left: 26px;
+            margin-top: 25px;
+        }
+        .resultado input{
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border: 1px solid black;
+            outline: none;
+        }
+      
+    </style>
+</head>
+<body>
+   <h1 style="color: aliceblue;">Calculadora simples</h1>
+    <div class="paragrafo">
+       <div class="numeros">
+        <label for="Valor1">Valor1:</label><input type="text" id="numero1" placeholder="numero1">  
+        <label for="valor2">Valor2:</label><input type="text" id="numero2" placeholder="numero2"> 
+        <button type="button" value="resultado" onclick="resultado()">resultado</button>
+        </div>
+        
+        <div class="resultado">
+            <label for=" Resultado:"> Resultado:</label>
+            <input type="text" id="r" placeholder="resultado" readonly>
+        </div>
+    </div>
+
+
+    <script>
+        function resultado(){
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+            var soma = numero1 + numero2;
+            var sub = numero1 - numero2;
+            var mult = numero1 * numero2;
+            var divs = numero1 / numero2;
+
+            const  print = "Soma: " + soma + ", Subtração: " + sub + ", Multiplicação: " + mult + ", Divisão: " + divs;
+            
+            console.log(print)
+            document.getElementById('r').value = print;
+
+        }
+    </script>
+</body>
+</html>
